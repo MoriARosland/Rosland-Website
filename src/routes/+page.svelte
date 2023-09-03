@@ -1,4 +1,6 @@
-<h1 class="text-green-400">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
-<button class="btn btn-primary w-64 rounded-full">I'm a button</button>
+<div class="h-screen grid place-content-center">
+	<h1 class="font-mono text-5xl text-blue-600">Mori Adrian Rosland</h1>
+	<p class="font-mono text-xl text-red-500">
+		Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
+	</p>
+</div>
