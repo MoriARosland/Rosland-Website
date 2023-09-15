@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Tabs from '$lib/components/Tabs.svelte';
 	import card_image from '$lib/images/placeholder.jpg';
+	import AnimateContent from '$lib/components/AnimateContent.svelte';
 
 	let items = ['Projects', 'Bio'];
 	let activeItem = 'Projects';
@@ -25,35 +26,35 @@
 </div>
 
 <main class="relative min-h-screen">
-	<Tabs bind:activeItem {items}>
-		{#key activeItem}
-			{#if activeItem == 'Projects'}
-				<div class="flex px-3 py-2 justify-center">
-					<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
-						<figure>
-							<img src={card_image} alt="placeholder" />
-						</figure>
-						<div class="card-body">
-							<h2 class="card-title text-black">Im a placeholder!</h2>
-							<p class="text-black">This is just some text to PLACEHOLD.</p>
-						</div>
-					</div>
-					<div class="card w-96 h-96 bg-base-100 shadow-xl m-3">
-						<figure>
-							<img src={card_image} alt="placeholder" />
-						</figure>
-						<div class="card-body">
-							<h2 class="card-title">Im a placeholder!</h2>
-							<p>This is just some text to PLACEHOLD.</p>
-						</div>
+	<Tabs bind:activeItem {items} />
+
+	<AnimateContent {activeItem}>
+		{#if activeItem == 'Projects'}
+			<div class="flex px-3 py-2 justify-center">
+				<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
+					<figure>
+						<img src={card_image} alt="placeholder" />
+					</figure>
+					<div class="card-body">
+						<h2 class="card-title text-black">This Website!</h2>
+						<p class="text-black">This is just some text to PLACEHOLD.</p>
 					</div>
 				</div>
-			{:else if activeItem == 'Bio'}
-				<h1>This is my bio</h1>
-				<p>Here is some text about me.</p>
-			{/if}
-		{/key}
-	</Tabs>
+				<div class="card w-96 h-96 bg-base-100 shadow-xl m-3">
+					<figure>
+						<img src={card_image} alt="placeholder" />
+					</figure>
+					<div class="card-body">
+						<h2 class="card-title">Im a placeholder!</h2>
+						<p>This is just some text to PLACEHOLD.</p>
+					</div>
+				</div>
+			</div>
+		{:else if activeItem == 'Bio'}
+			<h1>This is my bio</h1>
+			<p>Here is some text about me.</p>
+		{/if}
+	</AnimateContent>
 </main>
 
 <!-- <div class="relative min-h-screen bg-gray-800">
