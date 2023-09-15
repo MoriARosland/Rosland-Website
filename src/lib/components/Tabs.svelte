@@ -4,6 +4,7 @@
 
 	function changeTab(item: string) {
 		activeItem = item;
+		console.log('New item is:', item);
 	}
 </script>
 
@@ -28,3 +29,5 @@
 		</ul>
 	</div>
 {/key}
+
+<slot />

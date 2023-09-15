@@ -4,6 +4,10 @@
 
 	let items = ['Projects', 'Bio'];
 	let activeItem = 'Projects';
+
+	function printStates() {
+		console.log('Active item:', activeItem);
+	}
 </script>
 
 <div class="hero min-h-screen bg-base-200">
@@ -20,8 +24,38 @@
 	</div>
 </div>
 
-<main>
-	<Tabs {activeItem} {items} />
+<main class="relative min-h-screen">
+	<Tabs bind:activeItem {items}>
+		{#key activeItem}
+			{#if activeItem == 'Projects'}
+				<div class="flex px-3 py-2 justify-center">
+					<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
+						<figure>
+							<img src={card_image} alt="placeholder" />
+						</figure>
+						<div class="card-body">
+							<h2 class="card-title text-black">Im a placeholder!</h2>
+							<p class="text-black">This is just some text to PLACEHOLD.</p>
+						</div>
+					</div>
+					<div class="card w-96 h-96 bg-base-100 shadow-xl m-3">
+						<figure>
+							<img src={card_image} alt="placeholder" />
+						</figure>
+						<div class="card-body">
+							<h2 class="card-title">Im a placeholder!</h2>
+							<p>This is just some text to PLACEHOLD.</p>
+						</div>
+					</div>
+				</div>
+			{:else if activeItem == 'Bio'}
+				<h1>This is my bio</h1>
+				<p>Here is some text about me.</p>
+			{/if}
+		{/key}
+	</Tabs>
+
+	<button class="btn btn-primary" on:click={printStates}>Console-log states</button>
 </main>
 
 <!-- <div class="relative min-h-screen bg-gray-800">
@@ -35,30 +69,4 @@
 			>
 		</div>
 	</div>
-
-	{#if showCaseState.state == 'projects'}
-		<div class="flex px-3 py-2 justify-center">
-			<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
-				<figure>
-					<img src={card_image} alt="placeholder" />
-				</figure>
-				<div class="card-body">
-					<h2 class="card-title text-black">Im a placeholder!</h2>
-					<p class="text-black">This is just some text to PLACEHOLD.</p>
-				</div>
-			</div>
-			<div class="card w-96 h-96 bg-base-100 shadow-xl m-3">
-				<figure>
-					<img src={card_image} alt="placeholder" />
-				</figure>
-				<div class="card-body">
-					<h2 class="card-title">Im a placeholder!</h2>
-					<p>This is just some text to PLACEHOLD.</p>
-				</div>
-			</div>
-		</div>
-	{:else if showCaseState.state == 'bio'}
-		<h1>This is my bio</h1>
-		<p>Here is some text about me.</p>
-	{/if}
 </div> -->
