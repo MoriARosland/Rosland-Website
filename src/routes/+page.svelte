@@ -3,12 +3,17 @@
 	import card_image from '$lib/images/placeholder.jpg';
 	import AnimateContent from '$lib/components/AnimateContent.svelte';
 
+	function scrollToMain() {
+		const object = document.getElementById('main');
+
+		// Prevent null warning.
+		if (!object) return;
+
+		object.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+	}
+
 	let items = ['Projects', 'Bio'];
 	let activeItem = 'Projects';
-
-	function printStates() {
-		console.log('Active item:', activeItem);
-	}
 </script>
 
 <div class="hero min-h-screen bg-base-200">
@@ -18,14 +23,14 @@
 			<p class="py-6">
 				I study Electronic System Design and Innovation at NTNU, and is currently in my 3rd year.
 			</p>
-			<button class="btn btn-ghost btn-outline normal-case"
+			<button class="btn btn-ghost btn-outline normal-case" on:click={scrollToMain}
 				>Have a look at some of my projects🛠</button
 			>
 		</div>
 	</div>
 </div>
 
-<main class="relative min-h-screen">
+<main class="relative min-h-screen" id="main">
 	<Tabs bind:activeItem {items} />
 
 	<AnimateContent {activeItem}>
