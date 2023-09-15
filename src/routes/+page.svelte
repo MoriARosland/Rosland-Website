@@ -36,8 +36,11 @@
 						<img src={card_image} alt="placeholder" />
 					</figure>
 					<div class="card-body">
-						<h2 class="card-title text-black">This Website!</h2>
-						<p class="text-black">This is just some text to PLACEHOLD.</p>
+						<h2 class="card-title text-black">This Website😎</h2>
+						<p class="text-black">
+							I figured it would be nice to have a personal website, so i built this site.
+							<br /> It's built with SvelteKit, TailwindCSS and DaisyUi.
+						</p>
 					</div>
 				</div>
 				<div class="card w-96 h-96 bg-base-100 shadow-xl m-3">
@@ -45,8 +48,11 @@
 						<img src={card_image} alt="placeholder" />
 					</figure>
 					<div class="card-body">
-						<h2 class="card-title">Im a placeholder!</h2>
-						<p>This is just some text to PLACEHOLD.</p>
+						<h2 class="card-title">Custom merch for my student union</h2>
+						<p>
+							At some point, i got an image in my head i thought was funny. So i desided to design
+							it on a sweater, create and distribute it all by my self.
+						</p>
 					</div>
 				</div>
 			</div>
