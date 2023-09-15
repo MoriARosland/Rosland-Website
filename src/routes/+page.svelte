@@ -54,8 +54,6 @@
 			{/if}
 		{/key}
 	</Tabs>
-
-	<button class="btn btn-primary" on:click={printStates}>Console-log states</button>
 </main>
 
 <!-- <div class="relative min-h-screen bg-gray-800">
