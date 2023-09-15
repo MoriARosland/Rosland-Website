@@ -1,6 +1,4 @@
 <script lang="ts">
-	import AnimatedBody from '$lib/components/AnimatedBody.svelte';
-	import { page } from '$app/stores';
 	import '../app.css';
 </script>
 
