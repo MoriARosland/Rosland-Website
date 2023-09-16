@@ -2,6 +2,7 @@
 	import Tabs from '$lib/components/Tabs.svelte';
 	import card_image from '$lib/images/placeholder.jpg';
 	import AnimateContent from '$lib/components/AnimateContent.svelte';
+	import Links from '$lib/components/Links.svelte';
 
 	function scrollToMain() {
 		const object = document.getElementById('main');
@@ -20,11 +21,12 @@
 	<div class="hero-content text-center">
 		<div class="max-w-max">
 			<h1 class="text-5xl font-bold">Hello there👋 I'm Mori</h1>
-			<p class="py-6">
+			<p class="py-4">
 				I study Electronic System Design and Innovation at NTNU, and is currently in my 3rd year.
 			</p>
-			<button class="btn btn-ghost btn-outline normal-case" on:click={scrollToMain}
-				>Have a look at some of my projects🛠</button
+			<Links />
+			<button class="btn btn-ghost btn-outline normal-case mt-3" on:click={scrollToMain}
+				>Take a look at some of my projects🛠</button
 			>
 		</div>
 	</div>
@@ -58,6 +60,19 @@
 							At some point, i got an image in my head i thought was funny. So i desided to design
 							it on a sweater, create and distribute it all by my self.
 						</p>
+					</div>
+				</div>
+				<div class="flex px-3 py-2 justify-center">
+					<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
+						<figure>
+							<img src={card_image} alt="placeholder" />
+						</figure>
+						<div class="card-body">
+							<h2 class="card-title text-black">Arcade Game</h2>
+							<p class="text-black">
+								Built a gamestation with my student group as part of a university project.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
