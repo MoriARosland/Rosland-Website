@@ -16,7 +16,7 @@
 	}
 
 	let items = ['Projects', 'Bio'];
-	let activeItem = 'Projects';
+	let activeItem = 'Bio';
 </script>
 
 <div class="hero min-h-screen bg-base-200">
@@ -80,8 +80,23 @@
 				</div>
 			</div>
 		{:else if activeItem == 'Bio'}
-			<h1>This is my bio</h1>
-			<p>Here is some text about me.</p>
+			<div class="flex justify-center">
+				<div class="flex flex-row justify-center w-2/3">
+					<div class="bg-red-500 w-full px-4 py-3" id="text">
+						<h1 class="text-4xl font-bold pb-3">About me</h1>
+						<h2 class="pb-1">Age: continuously increasing</h2>
+						<h2 class="pb-1">Nationality: the people who like fish, "brunost" and oil.</h2>
+						<h2 class="pb-1">
+							Education: Undergoing 5 year program to understand how to create cool stuff with some
+							metal combined with green plastic (aka. PCB's).
+						</h2>
+						<p>Here is some text about me.</p>
+					</div>
+					<div class="bg-blue-700 w-full px-4 py-3" id="images">
+						<p>Here is some text about me.</p>
+					</div>
+				</div>
+			</div>
 		{/if}
 	</AnimateContent>
 </main>
