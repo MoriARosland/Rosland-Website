@@ -3,6 +3,9 @@
 	import cardImageCode from '$lib/images/code.png';
 	import cardImageMerch from '$lib/images/merchDesign.jpg';
 	import cardImageArcade from '$lib/images/elsysgame.jpg';
+	import bioImageBike from '$lib/images/bike.jpg';
+	import bioImagePortrait from '$lib/images/portrait.jpg';
+	import bioImageMountain from '$lib/images/mountains.jpg';
 	import AnimateContent from '$lib/components/AnimateContent.svelte';
 	import Links from '$lib/components/Links.svelte';
 
@@ -82,34 +85,31 @@
 		{:else if activeItem == 'Bio'}
 			<div class="flex justify-center">
 				<div class="flex flex-row justify-center w-2/3">
-					<div class="bg-red-500 w-full px-4 py-3" id="text">
+					<div class=" w-full px-4 py-3" id="text">
 						<h1 class="text-4xl font-bold pb-3">About me</h1>
-						<h2 class="pb-1">Age: continuously increasing</h2>
-						<h2 class="pb-1">Nationality: the people who like fish, "brunost" and oil.</h2>
+						<h2 class="pb-1"><spand class="font-medium">Age:</spand> continuously increasing</h2>
 						<h2 class="pb-1">
-							Education: Undergoing 5 year program to understand how to create cool stuff with some
-							metal combined with green plastic (aka. PCB's).
+							<spand class="font-medium">Nationality:</spand> the people who like fish, "brunost" and
+							oil.
 						</h2>
-						<p>Here is some text about me.</p>
+						<h2 class="pb-1">
+							<spand class="font-medium">Education:</spand> Undergoing 5-year program at NTNU to understand
+							how to create cool stuff with metal combined with green plastic (aka. PCBs).
+						</h2>
+						<p class="pt-2">
+							<span class="font-medium">Bio:</span> Making things (mostly with code), reading stuff,
+							learning stuff, and practicing sports are what interests me the most. <br />
+							A part of this is spending time with people; meeting new people, working with people, and
+							getting to know people, all of which I love.
+						</p>
 					</div>
-					<div class="bg-blue-700 w-full px-4 py-3" id="images">
-						<p>Here is some text about me.</p>
+					<div class="flex flex-row flex-wrap w-full px-4 py-3" id="images">
+						<img class="max-h-80 mx-2" src={bioImagePortrait} alt="placeholder" />
+						<img class="max-h-80 mx-2" src={bioImageMountain} alt="placeholder" />
+						<img class="max-h-80 mx-2 mt-2" src={bioImageBike} alt="placeholder" />
 					</div>
 				</div>
 			</div>
 		{/if}
 	</AnimateContent>
 </main>
-
-<!-- <div class="relative min-h-screen bg-gray-800">
-	<div class="min-w-screen flex justify-center">
-		<div class="join pt-16">
-			<button class="btn join-item btn-outline btn-info btn-sm" on:click={setContentToProjects}
-				>Projects🛠</button
-			>
-			<button class="btn join-item btn-outline btn-info btn-sm" on:click={setContentToBio}
-				>Bio💬</button
-			>
-		</div>
-	</div>
-</div> -->
