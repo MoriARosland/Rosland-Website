@@ -40,41 +40,42 @@
 	<AnimateContent {activeItem}>
 		{#if activeItem == 'Projects'}
 			<div class="flex px-3 py-2 justify-center">
-				<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
+				<div class="card w-96 bg-neutral-200 shadow-xl m-3">
 					<figure>
 						<img src={cardImageCode} alt="placeholder" />
 					</figure>
 					<div class="card-body">
 						<h2 class="card-title text-black">This Website😎</h2>
 						<p class="text-black">
-							I figured it would be nice to have a personal website, so i built this site.
-							<br /> It's built with SvelteKit, TailwindCSS and DaisyUi.
+							I wanted to learn SvelteKit, and have a personal website. So i built this!
+							<br /> It's built with SvelteKit, TailwindCSS and DaisyUi. <br />
+							<spand class="italic"> (this card will be clickable with more info soon) </spand>
 						</p>
 					</div>
 				</div>
-				<div class="card w-96 h-96 bg-base-100 shadow-xl m-3">
+				<div class="card w-96 bg-neutral-200 shadow-xl m-3">
 					<figure>
 						<img src={cardImageMerch} alt="placeholder" />
 					</figure>
 					<div class="card-body">
-						<h2 class="card-title">Custom merch for my student union</h2>
-						<p>
-							At some point, i got an image in my head i thought was funny. So i desided to design
-							it on a sweater, create and distribute it all by my self.
+						<h2 class="card-title text-black">Student Union Merch</h2>
+						<p class="text-black">
+							At some point in 2022, i got an image in my head i thought would be funny on a
+							sweater. So i desided to design, create and distribute it all by my self. <br />
+							<spand class="italic"> (this card will be clickable with more info soon) </spand>
 						</p>
 					</div>
 				</div>
-				<div class="flex px-3 py-2 justify-center">
-					<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
-						<figure>
-							<img class="mt-40" src={cardImageArcade} alt="placeholder" />
-						</figure>
-						<div class="card-body">
-							<h2 class="card-title text-black">Arcade Game</h2>
-							<p class="text-black">
-								Built a gamestation with my student group as part of a university project.
-							</p>
-						</div>
+				<div class="card w-96 bg-neutral-200 shadow-xl m-3">
+					<figure>
+						<img src={cardImageArcade} alt="placeholder" />
+					</figure>
+					<div class="card-body">
+						<h2 class="card-title text-black">Arcade Game</h2>
+						<p class="text-black">
+							Built a gamestation with my student group as part of a university project. <br />
+							<spand class="italic"> (this card will be clickable with more info soon) </spand>
+						</p>
 					</div>
 				</div>
 			</div>
