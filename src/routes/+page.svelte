@@ -1,6 +1,11 @@
 <script lang="ts">
 	import Tabs from '$lib/components/Tabs.svelte';
-	import card_image from '$lib/images/placeholder.jpg';
+	import cardImageCode from '$lib/images/code.png';
+	import cardImageMerch from '$lib/images/merchDesign.jpg';
+	import cardImageArcade from '$lib/images/elsysgame.jpg';
+	import bioImageBike from '$lib/images/bike.jpg';
+	import bioImagePortrait from '$lib/images/portrait.jpg';
+	import bioImageMountain from '$lib/images/mountains.jpg';
 	import AnimateContent from '$lib/components/AnimateContent.svelte';
 	import Links from '$lib/components/Links.svelte';
 
@@ -14,7 +19,7 @@
 	}
 
 	let items = ['Projects', 'Bio'];
-	let activeItem = 'Projects';
+	let activeItem = 'Bio';
 </script>
 
 <div class="hero min-h-screen bg-base-200">
@@ -38,60 +43,73 @@
 	<AnimateContent {activeItem}>
 		{#if activeItem == 'Projects'}
 			<div class="flex px-3 py-2 justify-center">
-				<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
+				<div class="card w-96 bg-neutral-200 shadow-xl m-3">
 					<figure>
-						<img src={card_image} alt="placeholder" />
+						<img src={cardImageCode} alt="placeholder" />
 					</figure>
 					<div class="card-body">
 						<h2 class="card-title text-black">This Website😎</h2>
 						<p class="text-black">
-							I figured it would be nice to have a personal website, so i built this site.
-							<br /> It's built with SvelteKit, TailwindCSS and DaisyUi.
+							I wanted to learn SvelteKit, and have a personal website. So i built this!
+							<br /> It's built with SvelteKit, TailwindCSS and DaisyUi. <br />
+							<spand class="italic"> (this card will be clickable with more info soon) </spand>
 						</p>
 					</div>
 				</div>
-				<div class="card w-96 h-96 bg-base-100 shadow-xl m-3">
+				<div class="card w-96 bg-neutral-200 shadow-xl m-3">
 					<figure>
-						<img src={card_image} alt="placeholder" />
+						<img src={cardImageMerch} alt="placeholder" />
 					</figure>
 					<div class="card-body">
-						<h2 class="card-title">Custom merch for my student union</h2>
-						<p>
-							At some point, i got an image in my head i thought was funny. So i desided to design
-							it on a sweater, create and distribute it all by my self.
+						<h2 class="card-title text-black">Student Union Merch</h2>
+						<p class="text-black">
+							At some point in 2022, i got an image in my head i thought would be funny on a
+							sweater. So i desided to design, create and distribute it all by my self. <br />
+							<spand class="italic"> (this card will be clickable with more info soon) </spand>
 						</p>
 					</div>
 				</div>
-				<div class="flex px-3 py-2 justify-center">
-					<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
-						<figure>
-							<img src={card_image} alt="placeholder" />
-						</figure>
-						<div class="card-body">
-							<h2 class="card-title text-black">Arcade Game</h2>
-							<p class="text-black">
-								Built a gamestation with my student group as part of a university project.
-							</p>
-						</div>
+				<div class="card w-96 bg-neutral-200 shadow-xl m-3">
+					<figure>
+						<img src={cardImageArcade} alt="placeholder" />
+					</figure>
+					<div class="card-body">
+						<h2 class="card-title text-black">Arcade Game</h2>
+						<p class="text-black">
+							Built a gamestation with my student group as part of a university project. <br />
+							<spand class="italic"> (this card will be clickable with more info soon) </spand>
+						</p>
 					</div>
 				</div>
 			</div>
 		{:else if activeItem == 'Bio'}
-			<h1>This is my bio</h1>
-			<p>Here is some text about me.</p>
+			<div class="flex justify-center">
+				<div class="flex flex-row justify-center w-2/3">
+					<div class=" w-full px-4 py-3" id="text">
+						<h1 class="text-4xl font-bold pb-3">About me</h1>
+						<h2 class="pb-1"><spand class="font-medium">Age:</spand> continuously increasing</h2>
+						<h2 class="pb-1">
+							<spand class="font-medium">Nationality:</spand> the people who like fish, "brunost" and
+							oil.
+						</h2>
+						<h2 class="pb-1">
+							<spand class="font-medium">Education:</spand> Undergoing 5-year program at NTNU to understand
+							how to create cool stuff with metal combined with green plastic (aka. PCBs).
+						</h2>
+						<p class="pt-2">
+							<span class="font-medium">Bio:</span> Making things (mostly with code), reading stuff,
+							learning stuff, and practicing sports are what interests me the most. <br />
+							A part of this is spending time with people; meeting new people, working with people, and
+							getting to know people, all of which I love.
+						</p>
+					</div>
+					<div class="flex flex-row flex-wrap w-full px-4 py-3" id="images">
+						<img class="max-h-80 mx-2" src={bioImagePortrait} alt="placeholder" />
+						<img class="max-h-80 mx-2" src={bioImageMountain} alt="placeholder" />
+						<img class="max-h-80 mx-2 mt-2" src={bioImageBike} alt="placeholder" />
+					</div>
+				</div>
+			</div>
 		{/if}
 	</AnimateContent>
 </main>
-
-<!-- <div class="relative min-h-screen bg-gray-800">
-	<div class="min-w-screen flex justify-center">
-		<div class="join pt-16">
-			<button class="btn join-item btn-outline btn-info btn-sm" on:click={setContentToProjects}
-				>Projects🛠</button
-			>
-			<button class="btn join-item btn-outline btn-info btn-sm" on:click={setContentToBio}
-				>Bio💬</button
-			>
-		</div>
-	</div>
-</div> -->
