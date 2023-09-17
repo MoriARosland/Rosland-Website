@@ -87,10 +87,12 @@
 				<div class="flex flex-row justify-center w-2/3">
 					<div class=" w-full px-4 py-3" id="text">
 						<h1 class="text-4xl font-bold pb-3">About me</h1>
-						<h2 class="pb-1"><spand class="font-medium">Age:</spand> continuously increasing</h2>
+						<h2 class="pb-1"><spand class="font-medium">Age:</spand> Continuously increasing.</h2>
 						<h2 class="pb-1">
-							<spand class="font-medium">Nationality:</spand> the people who like fish, "brunost" and
-							oil.
+							<spand class="font-medium">Where I'm from:</spand> A place with plenty fish, "brunost"
+							and oil. Which part? The place where people call us "<span class="italic"
+								>Nordlending</span
+							>".
 						</h2>
 						<h2 class="pb-1">
 							<spand class="font-medium">Education:</spand> Undergoing 5-year program at NTNU to understand
