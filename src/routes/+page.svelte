@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Tabs from '$lib/components/Tabs.svelte';
-	import card_image from '$lib/images/placeholder.jpg';
+	import cardImageCode from '$lib/images/code.png';
+	import cardImageMerch from '$lib/images/merchDesign.jpg';
+	import cardImageArcade from '$lib/images/elsysgame.jpg';
 	import AnimateContent from '$lib/components/AnimateContent.svelte';
 	import Links from '$lib/components/Links.svelte';
 
@@ -40,7 +42,7 @@
 			<div class="flex px-3 py-2 justify-center">
 				<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
 					<figure>
-						<img src={card_image} alt="placeholder" />
+						<img src={cardImageCode} alt="placeholder" />
 					</figure>
 					<div class="card-body">
 						<h2 class="card-title text-black">This Website😎</h2>
@@ -52,7 +54,7 @@
 				</div>
 				<div class="card w-96 h-96 bg-base-100 shadow-xl m-3">
 					<figure>
-						<img src={card_image} alt="placeholder" />
+						<img src={cardImageMerch} alt="placeholder" />
 					</figure>
 					<div class="card-body">
 						<h2 class="card-title">Custom merch for my student union</h2>
@@ -65,7 +67,7 @@
 				<div class="flex px-3 py-2 justify-center">
 					<div class="card w-96 h-96 bg-slate-200 shadow-xl m-3">
 						<figure>
-							<img src={card_image} alt="placeholder" />
+							<img class="mt-40" src={cardImageArcade} alt="placeholder" />
 						</figure>
 						<div class="card-body">
 							<h2 class="card-title text-black">Arcade Game</h2>
