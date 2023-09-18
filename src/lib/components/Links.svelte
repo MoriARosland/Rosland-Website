@@ -12,7 +12,7 @@
 		>
 	</a>
 
-	<a href="https://www.instagram.com/mori.rosland/">
+	<a href="https://www.linkedin.com/in/morirosland/">
 		<svg
 			class="mx-1 my-1 fill-slate-400 hover:fill-sky-400 hover:scale-110 transition duration-400"
 			xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@
 		>
 	</a>
 
-	<a href="https://www.linkedin.com/in/morirosland/">
+	<a href="https://www.instagram.com/mori.rosland/">
 		<svg
 			class="mx-1 my-1 fill-slate-400 hover:fill-sky-400 hover:scale-110 transition duration-400"
 			xmlns="http://www.w3.org/2000/svg"
