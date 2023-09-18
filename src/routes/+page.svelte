@@ -18,7 +18,7 @@
 	}
 
 	let items = ['Projects', 'Bio'];
-	let activeItem = 'Bio';
+	let activeItem = 'Projects';
 </script>
 
 <div class="hero min-h-screen bg-base-200">
@@ -63,7 +63,8 @@
 						<h2 class="card-title text-black">Student Union Merch</h2>
 						<p class="text-black">
 							At some point in 2022, i got an image in my head i thought would be funny on a
-							sweater. So i desided to design, create and distribute it all by my self. <br />
+							sweater. So i desided to design (with some help), create and distribute it all by my
+							self. <br />
 							<spand class="italic"> (this card will be clickable with more info soon) </spand>
 						</p>
 					</div>
@@ -81,6 +82,7 @@
 					</div>
 				</div>
 			</div>
+			<h1 class="text-center text-2xl">More comming soon</h1>
 		{:else if activeItem == 'Bio'}
 			<div class="flex justify-center">
 				<div class="flex flex-row justify-center w-2/3">
