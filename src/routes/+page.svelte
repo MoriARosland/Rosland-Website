@@ -4,7 +4,6 @@
 	import cardImageMerch from '$lib/images/merchDesign.jpg';
 	import cardImageArcade from '$lib/images/elsysgame.jpg';
 	import bioImageBike from '$lib/images/bike.jpg';
-	import bioImagePortrait from '$lib/images/portrait.jpg';
 	import bioImageMountain from '$lib/images/mountains.jpg';
 	import AnimateContent from '$lib/components/AnimateContent.svelte';
 	import Links from '$lib/components/Links.svelte';
@@ -42,7 +41,7 @@
 
 	<AnimateContent {activeItem}>
 		{#if activeItem == 'Projects'}
-			<div class="flex px-3 py-2 justify-center">
+			<div class="flex px-3 py-2 justify-center flex-wrap">
 				<div class="card w-96 bg-neutral-200 shadow-xl m-3">
 					<figure>
 						<img src={cardImageCode} alt="placeholder" />
@@ -102,13 +101,16 @@
 							<span class="font-medium">Bio:</span> Making things (mostly with code), reading stuff,
 							learning stuff, and practicing sports are what interests me the most. <br />
 							A part of this is spending time with people; meeting new people, working with people, and
-							getting to know people, all of which I love.
+							getting to know people, all of which i find great joy in.
 						</p>
 					</div>
 					<div class="flex flex-row flex-wrap w-full px-4 py-3" id="images">
-						<img class="max-h-80 mx-2" src={bioImagePortrait} alt="placeholder" />
-						<img class="max-h-80 mx-2" src={bioImageMountain} alt="placeholder" />
-						<img class="max-h-80 mx-2 mt-2" src={bioImageBike} alt="placeholder" />
+						<img class="object-scale-down max-w-xs mx-2" src={bioImageMountain} alt="placeholder" />
+						<img
+							class="object-scale-down max-w-xs mx-2 my-2"
+							src={bioImageBike}
+							alt="placeholder"
+						/>
 					</div>
 				</div>
 			</div>
