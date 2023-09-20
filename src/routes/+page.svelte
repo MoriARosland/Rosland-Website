@@ -18,7 +18,7 @@
 	}
 
 	let items = ['Projects', 'Bio'];
-	let activeItem = 'Projects';
+	let activeItem = 'Bio';
 </script>
 
 <div class="hero min-h-screen bg-base-200">
@@ -49,7 +49,7 @@
 					<div class="card-body">
 						<h2 class="card-title text-black">This Website😎</h2>
 						<p class="text-black">
-							I wanted to learn SvelteKit, and have a personal website. So i built this!
+							I wanted to learn SvelteKit, and have a personal website. So I made this!
 							<br /> It's built with SvelteKit, TailwindCSS and DaisyUi. <br />
 							<spand class="italic"> (this card will be clickable with more info soon) </spand>
 						</p>
@@ -62,9 +62,9 @@
 					<div class="card-body">
 						<h2 class="card-title text-black">Student Union Merch</h2>
 						<p class="text-black">
-							At some point in 2022, i got an image in my head i thought would be funny on a
-							sweater. So i desided to design (with some help), create and distribute it all by my
-							self. <br />
+							At some point in 2022, I got an image in my head I thought would be funny on a
+							sweater. So I decided to design (with some help), create, distribute, and sell it all
+							by myself. <br />
 							<spand class="italic"> (this card will be clickable with more info soon) </spand>
 						</p>
 					</div>
@@ -85,13 +85,13 @@
 			<h1 class="text-center text-2xl">More comming soon</h1>
 		{:else if activeItem == 'Bio'}
 			<div class="flex justify-center">
-				<div class="flex flex-row justify-center w-2/3">
-					<div class=" w-full px-4 py-3" id="text">
+				<div class="flex flex-row justify-center">
+					<div class="w-full px-4 py-3" id="text">
 						<h1 class="text-4xl font-bold pb-3">About me</h1>
 						<h2 class="pb-1"><spand class="font-medium">Age:</spand> Continuously increasing.</h2>
 						<h2 class="pb-1">
-							<spand class="font-medium">Where I'm from:</spand> A place with plenty fish, "brunost"
-							and oil. Which part? The place where people call us "<span class="italic"
+							<spand class="font-medium">Where I'm from:</spand> A place with plenty of fish,
+							"brunost" and oil. Which part? The place where people call us "<span class="italic"
 								>Nordlending</span
 							>".
 						</h2>
@@ -101,12 +101,13 @@
 						</h2>
 						<p class="pt-2">
 							<span class="font-medium">Bio:</span> Making things (mostly with code), reading stuff,
-							learning stuff, and practicing sports are what interests me the most. <br />
+							learning stuff (e.g tech), and practicing sports are what interests me the most.
+							<br />
 							A part of this is spending time with people; meeting new people, working with people, and
-							getting to know people, all of which i find great joy in.
+							getting to know people, all of which I find great joy in.
 						</p>
 					</div>
-					<div class="flex flex-row flex-wrap w-full px-4 py-3" id="images">
+					<div class="flex flex-col w-full px-4 py-3" id="images">
 						<img class="object-scale-down max-w-xs mx-2" src={bioImageMountain} alt="placeholder" />
 						<img
 							class="object-scale-down max-w-xs mx-2 my-2"
