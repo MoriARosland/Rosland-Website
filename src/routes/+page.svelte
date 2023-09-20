@@ -7,6 +7,19 @@
 	import bioImageMountain from '$lib/images/mountains.jpg';
 	import AnimateContent from '$lib/components/AnimateContent.svelte';
 	import Links from '$lib/components/Links.svelte';
+	import { onMount } from 'svelte';
+
+	let windowWidth = 0;
+
+	onMount(() => {
+		// Update windowWidth when the component is mounted
+		windowWidth = window.innerWidth;
+
+		// Add an event listener to update windowWidth on window resize
+		window.addEventListener('resize', () => {
+			windowWidth = window.innerWidth;
+		});
+	});
 
 	function scrollToMain() {
 		const object = document.getElementById('main');
@@ -85,7 +98,7 @@
 			<h1 class="text-center text-2xl">More comming soon</h1>
 		{:else if activeItem == 'Bio'}
 			<div class="flex justify-center">
-				<div class="flex flex-row justify-center">
+				<div class="flex flex-row justify-center" class:flex-wrap={windowWidth < 768}>
 					<div class="w-full px-4 py-3" id="text">
 						<h1 class="text-4xl font-bold pb-3">About me</h1>
 						<h2 class="pb-1"><spand class="font-medium">Age:</spand> Continuously increasing.</h2>
