@@ -31,7 +31,7 @@
 	}
 
 	let items = ['Projects', 'Bio'];
-	let activeItem = 'Bio';
+	let activeItem = 'Projects';
 </script>
 
 <div class="hero min-h-screen bg-base-200">
