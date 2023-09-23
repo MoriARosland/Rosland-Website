@@ -116,8 +116,8 @@
 							<span class="font-medium">Bio:</span> Making things (mostly with code), reading stuff,
 							learning stuff (e.g tech), and practicing sports are what interests me the most.
 							<br />
-							A part of this is spending time with people; meeting new people, working with people, and
-							getting to know people, all of which I find great joy in.
+							A part of this is meeting new people, working with people, and getting to know people,
+							all of which I find great joy in.
 						</p>
 					</div>
 					<div class="flex flex-col w-full px-4 py-3" id="images">
