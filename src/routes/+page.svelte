@@ -7,7 +7,15 @@
 	import bioImageMountain from '$lib/images/mountains.jpg';
 	import AnimateContent from '$lib/components/AnimateContent.svelte';
 	import Links from '$lib/components/Links.svelte';
+	import Modals from '$lib/components/modals/Modals.svelte';
 	import { onMount } from 'svelte';
+
+	let items = ['Projects', 'Bio'];
+	let activeItem = 'Projects';
+
+	let webModalIsOpen = false;
+	let merchModalIsOpen = false;
+	let gameModalIsOpen = false;
 
 	let windowWidth = 0;
 
@@ -29,9 +37,6 @@
 
 		object.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 	}
-
-	let items = ['Projects', 'Bio'];
-	let activeItem = 'Projects';
 </script>
 
 <div class="hero min-h-screen bg-base-200">
@@ -54,8 +59,12 @@
 
 	<AnimateContent {activeItem}>
 		{#if activeItem == 'Projects'}
+			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 			<div class="flex px-3 py-2 justify-center flex-wrap">
-				<div class="card w-96 bg-neutral-200 shadow-xl m-3">
+				<div
+					class="card w-96 bg-neutral-200 shadow-xl m-3 hover:cursor-pointer hover:scale-105 transition duration-400"
+					on:click={() => (webModalIsOpen = true)}
+				>
 					<figure>
 						<img src={cardImageCode} alt="placeholder" />
 					</figure>
@@ -63,24 +72,15 @@
 						<h2 class="card-title text-black">This Website😎</h2>
 						<p class="text-black">
 							I wanted to learn SvelteKit, and have a personal website. So I made this!
-							<br /> It's built with SvelteKit, TailwindCSS and DaisyUi. <br />
-							<spand class="italic"> (this card will be clickable with more info soon) </spand>
+							<br /> It's built with SvelteKit, TailwindCSS and DaisyUi.
 						</p>
 					</div>
-					<dialog id="my_modal_1" class="modal">
-						<div class="modal-box">
-							<h3 class="font-bold text-lg">Hello!</h3>
-							<p class="py-4">Press ESC key or click the button below to close</p>
-							<div class="modal-action">
-								<form method="dialog">
-									<!-- if there is a button in form, it will close the modal -->
-									<button class="btn">Close</button>
-								</form>
-							</div>
-						</div>
-					</dialog>
 				</div>
-				<div class="card w-96 bg-neutral-200 shadow-xl m-3">
+				<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+				<div
+					class="card w-96 bg-neutral-200 shadow-xl m-3 hover:cursor-pointer hover:scale-105 transition duration-400"
+					on:click={() => (merchModalIsOpen = true)}
+				>
 					<figure>
 						<img src={cardImageMerch} alt="placeholder" />
 					</figure>
@@ -89,24 +89,29 @@
 						<p class="text-black">
 							At some point in 2022, I got an image in my head I thought would be funny on a
 							sweater. So I decided to design (with some help), create, distribute, and sell it all
-							by myself. <br />
-							<spand class="italic"> (this card will be clickable with more info soon) </spand>
+							by myself.
 						</p>
 					</div>
 				</div>
-				<div class="card w-96 bg-neutral-200 shadow-xl m-3">
+				<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+				<div
+					class="card w-96 bg-neutral-200 shadow-xl m-3 hover:cursor-pointer hover:scale-105 transition duration-400"
+					on:click={() => (gameModalIsOpen = true)}
+				>
 					<figure>
 						<img src={cardImageArcade} alt="placeholder" />
 					</figure>
 					<div class="card-body">
 						<h2 class="card-title text-black">Arcade Game</h2>
 						<p class="text-black">
-							Built a gamestation with my student group as part of a university project. <br />
-							<spand class="italic"> (this card will be clickable with more info soon) </spand>
+							Built a gamestation with my student group as part of a university project.
 						</p>
 					</div>
 				</div>
 			</div>
+
+			<Modals bind:webModalIsOpen bind:merchModalIsOpen bind:gameModalIsOpen />
+
 			<h1 class="text-center text-2xl">More comming soon</h1>
 		{:else if activeItem == 'Bio'}
 			<div class="flex justify-center">

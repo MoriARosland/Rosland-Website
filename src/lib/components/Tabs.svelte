@@ -22,7 +22,6 @@
 						on:click={() => changeTab(item)}
 						class:text-white={item === activeItem}>{item}</button
 					>
-					<!-- Define active class -->
 				</li>
 			{/each}
 		</ul>
