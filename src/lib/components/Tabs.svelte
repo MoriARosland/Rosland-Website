@@ -16,6 +16,10 @@
 					class:bg-blue-600={item === activeItem}
 					class:bg-opacity-95={item === activeItem}
 					class:bg-gray-700={item !== activeItem}
+					class:hover:bg-blue-400={item !== activeItem}
+					class:hover:text-slate-100={item !== activeItem}
+					class:hover:transition={item !== activeItem}
+					class:transition={item !== activeItem}
 				>
 					<button
 						class="w-full h-full"
