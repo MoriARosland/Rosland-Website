@@ -120,21 +120,20 @@
 						<h1 class="text-4xl font-bold pb-3">About me</h1>
 						<h2 class="pb-1"><spand class="font-medium">Age:</spand> Continuously increasing.</h2>
 						<h2 class="pb-1">
-							<spand class="font-medium">Where I'm from:</spand> A place with plenty of fish,
-							"brunost" and oil. Which part? The place where people call us "<span class="italic"
+							<spand class="font-medium">Where I'm from:</spand> A place with plenty of fish and
+							oil. Which part? The place where people call us "<span class="italic"
 								>Nordlending</span
 							>".
 						</h2>
 						<h2 class="pb-1">
 							<spand class="font-medium">Education:</spand> Undergoing 5-year program at NTNU to understand
-							how to create cool stuff with metal combined with green plastic (aka. PCBs).
+							how to create stuff from metal combined with green plastic (aka. PCBs).
 						</h2>
 						<p class="pt-2">
 							<span class="font-medium">Bio:</span> Making things (mostly with code), reading stuff,
 							learning stuff (e.g tech), and practicing sports are what interests me the most.
 							<br />
-							A part of this is meeting new people, working with people, and getting to know people,
-							all of which I find great joy in.
+							I also find great joy in meeting, getting to know and work with people.
 						</p>
 					</div>
 					<div class="flex flex-col w-full px-4 py-3" id="images">
