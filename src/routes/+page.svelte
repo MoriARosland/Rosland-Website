@@ -127,13 +127,13 @@
 						</h2>
 						<h2 class="pb-1">
 							<spand class="font-medium">Education:</spand> Undergoing 5-year program at NTNU to understand
-							how to create stuff from metal combined with green plastic (aka. PCBs).
+							how to create things from metal combined with green plastic (aka. PCBs).
 						</h2>
 						<p class="pt-2">
 							<span class="font-medium">Bio:</span> Making things (mostly with code), reading stuff,
 							learning stuff (e.g tech), and practicing sports are what interests me the most.
 							<br />
-							I also find great joy in meeting, getting to know and work with people.
+							I also find great joy in meeting, getting to know and working with people.
 						</p>
 					</div>
 					<div class="flex flex-col w-full px-4 py-3" id="images">
