@@ -25,10 +25,11 @@
 
 <dialog id="modal" class="modal" class:modal-open={merchModalIsOpen}>
 	<div class="modal-box">
-		<h3 class="font-bold text-lg">
-			More info comming soon. I was too lazy at the time of writing this to write more :]
-		</h3>
-		<p class="py-4">Click the button below to close.</p>
+		<h3 class="font-bold text-lg">Ohma Electra on a stroll with it's pet, Bjørkelangen</h3>
+		<p class="py-4">
+			I wanted to learn the process of making a product - from beginning to the end. This entailed
+			eg. problem solving, design, production, collaboration, logistics, payment and feeback.
+		</p>
 		<div class="modal-action">
 			<form method="dialog">
 				<!-- if there is a button in form, it will close the modal -->
@@ -40,8 +41,10 @@
 
 <dialog id="modal" class="modal" class:modal-open={gameModalIsOpen}>
 	<div class="modal-box">
-		<h3 class="font-bold text-lg">More info comming sooooon :]</h3>
-		<p class="py-4">Click the button below to close.</p>
+		<h3 class="font-bold text-lg">Game development</h3>
+		<p class="py-4">
+			This project gave me a kickstart in programming and software development in teams.
+		</p>
 		<div class="modal-action">
 			<form method="dialog">
 				<!-- if there is a button in form, it will close the modal -->
