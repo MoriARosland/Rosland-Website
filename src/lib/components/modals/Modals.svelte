@@ -8,10 +8,10 @@
 	<div class="modal-box">
 		<h3 class="font-bold text-lg">morirosland.com</h3>
 		<p class="py-4">
-			You can view the Github repository <a
-				class="underline"
-				href="https://github.com/NamePending99/Rosland-Website"
-				target="_blank">here.</a
+			Along with learning SvelteKit, this project also taught me version control (git), hosting, and
+			webdesign. <br /> <br /> You can view the Github repository
+			<a class="underline" href="https://github.com/NamePending99/Rosland-Website" target="_blank"
+				>here.</a
 			>
 		</p>
 		<div class="modal-action">
@@ -25,10 +25,10 @@
 
 <dialog id="modal" class="modal" class:modal-open={merchModalIsOpen}>
 	<div class="modal-box">
-		<h3 class="font-bold text-lg">Ohma Electra on a stroll with it's pet, Bjørkelangen</h3>
+		<h3 class="font-bold text-lg">Ohma Electra with it's pet, Bjørkelangen</h3>
 		<p class="py-4">
 			I wanted to learn the process of making a product - from beginning to the end. This entailed
-			eg. problem solving, design, production, collaboration, logistics, payment and feeback.
+			eg. problem solving, design, production, collaboration, logistics, payment and feedback.
 		</p>
 		<div class="modal-action">
 			<form method="dialog">
