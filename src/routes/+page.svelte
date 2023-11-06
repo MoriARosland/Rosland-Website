@@ -44,7 +44,7 @@
 		<div class="max-w-max">
 			<h1 class="text-5xl font-bold">Hello there👋 I'm Mori</h1>
 			<p class="py-4">
-				I study Electronic System Design and Innovation at NTNU, and is currently in my 3rd year.
+				I study Electronic System Design and Innovation at NTNU and am currently in my 3rd year.
 			</p>
 			<Links />
 			<button class="btn btn-ghost btn-outline normal-case mt-3" on:click={scrollToMain}
