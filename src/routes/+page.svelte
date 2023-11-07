@@ -112,7 +112,7 @@
 
 			<Modals bind:webModalIsOpen bind:merchModalIsOpen bind:gameModalIsOpen />
 
-			<h1 class="text-center text-2xl">More comming soon</h1>
+			<h1 class="text-center text-2xl">More coming soon</h1>
 		{:else if activeItem == 'Bio'}
 			<div class="flex justify-center">
 				<div class="flex flex-row justify-center" class:flex-wrap={windowWidth < 768}>
