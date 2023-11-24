@@ -10,12 +10,10 @@
 			});
 		}
 	}
-
-	const url = 'https://www.googletagmanager.com/gtag/js?id=' + PUBLIC_GOOGLE_ANALYTICS;
 </script>
 
 <svelte:head>
-	<script async src={url}>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9D6PNQ0JH">
 	</script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
