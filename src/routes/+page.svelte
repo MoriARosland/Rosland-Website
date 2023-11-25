@@ -9,6 +9,9 @@
 	import Links from '$lib/components/Links.svelte';
 	import Modals from '$lib/components/modals/Modals.svelte';
 	import { onMount } from 'svelte';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 
 	let items = ['Projects', 'Bio'];
 	let activeItem = 'Projects';
@@ -37,6 +40,8 @@
 
 		object.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 	}
+
+	console.log(data.projects);
 </script>
 
 <div class="hero min-h-screen bg-base-200">
