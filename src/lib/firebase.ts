@@ -1,18 +1,45 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+import { FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID, FIREBASE_STORAGE_BUCKET, FIREBASE_MESSAGING_SENDER_ID, FIREBASE_APP_ID, FIREBASE_MEASUREMENT_ID } from '$env/static/private';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDrrGjI0kV5EZVVkuMhg1CAT30h5Uj5s68",
-    authDomain: "rosland-website.firebaseapp.com",
-    projectId: "rosland-website",
-    storageBucket: "rosland-website.appspot.com",
-    messagingSenderId: "329717577397",
-    appId: "1:329717577397:web:a7dce16531e14047ff70fc",
-    measurementId: "G-77F4S15RYG"
+    apiKey: FIREBASE_API_KEY,
+    authDomain: FIREBASE_AUTH_DOMAIN,
+    projectId: FIREBASE_PROJECT_ID,
+    storageBucket: FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+    appId: FIREBASE_APP_ID,
+    measurementId: FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
+
+// async function getProjectsData() {
+
+//     const collectionRef = collection(db, "projects");
+//     const querySnapshot = await getDocs(collectionRef);
+
+//     let projectList = [];
+
+//     querySnapshot.forEach((doc) => {
+//         projectList.push(doc.data({ id: doc.id, ...doc.data() }));
+//         console.log(`${doc.id} => ${doc.data()}`);
+//     });
+
+//     return projectList;
+// }
+
+try {
+    const docRef = await addDoc(collection(db, "users"), {
+        first: "Ada",
+        last: "Lovelace",
+        born: 1815
+    });
+    console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+    console.error("Error adding document: ", e);
+}
