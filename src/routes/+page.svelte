@@ -41,7 +41,9 @@
 		object.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 	}
 
-	console.log(data.projects);
+	// Remember to check for valid firebase data.
+	let projects = data.projects ?? 'No data';
+	console.log(projects);
 </script>
 
 <div class="hero min-h-screen bg-base-200">
