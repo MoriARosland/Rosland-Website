@@ -42,8 +42,13 @@
 	}
 
 	// Remember to check for valid firebase data.
-	let projects = data.projects ?? 'No data';
-	console.log(projects);
+	let projects = data.projects ?? 'null';
+	let validData = false;
+
+	if (projects != 'null') {
+		validData = true;
+		console.log(projects);
+	}
 </script>
 
 <div class="hero min-h-screen bg-base-200">
@@ -156,3 +161,35 @@
 		{/if}
 	</AnimateContent>
 </main>
+
+<!-- TODO: Add modal generation to firebase cards! -->
+<!-- See copilot chat -->
+<!-- - Create projectcard component
+- Create project modal component
+- When iterating over projects, create a projectcard component for each project. Pass the project data to the component. -->
+
+<!-- Firebase testing -->
+<div class="relative min-h-screen">
+	{#if validData}
+		<div class="flex px-3 py-2 justify-center flex-wrap">
+			{#each projects as project}
+				<div class="flex px-3 py-2 justify-center flex-wrap">
+					<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+					<div
+						class="card w-96 bg-neutral-200 shadow-xl m-3 hover:cursor-pointer hover:scale-105 transition duration-400"
+					>
+						<figure>
+							<img src={cardImageCode} alt="placeholder" />
+						</figure>
+						<div class="card-body">
+							<h2 class="card-title text-black">{project.title}</h2>
+							<p class="text-black">{project.description}</p>
+						</div>
+					</div>
+				</div>
+			{/each}
+		</div>
+	{:else}
+		<p>There is no data to show.</p>
+	{/if}
+</div>
