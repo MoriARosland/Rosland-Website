@@ -30,8 +30,8 @@ export async function getProjectsData() {
     let projectList: any[] = [];
 
     querySnapshot.forEach((doc) => {
-        console.log(doc.data());
         projectList.push(doc.data());
+        // console.log(doc.data());
         // console.log(`${doc.id} => ${doc.data()}`);
     });
 
