@@ -1,21 +1,18 @@
 <script lang="ts">
 	import Tabs from '$lib/components/Tabs.svelte';
-	import cardImageCode from '$lib/images/code.png';
-	import cardImageMerch from '$lib/images/merchDesign.jpg';
-	import cardImageArcade from '$lib/images/elsysgame.jpg';
 	import bioImageBike from '$lib/images/bike.jpg';
 	import bioImageMountain from '$lib/images/mountains.jpg';
 	import AnimateContent from '$lib/components/AnimateContent.svelte';
 	import Links from '$lib/components/Links.svelte';
-	import Modals from '$lib/components/modals/Modals.svelte';
 	import { onMount } from 'svelte';
+	import type { PageData } from './$types';
+
+	import Projectcard from '$lib/components/Projectcard.svelte';
+
+	export let data: PageData;
 
 	let items = ['Projects', 'Bio'];
 	let activeItem = 'Projects';
-
-	let webModalIsOpen = false;
-	let merchModalIsOpen = false;
-	let gameModalIsOpen = false;
 
 	let windowWidth = 0;
 
@@ -36,6 +33,15 @@
 		if (!object) return;
 
 		object.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+	}
+
+	// Remember to check for valid firebase data.
+	let projects = data.projects ?? [];
+	let validData = false;
+
+	if (projects.length != 0) {
+		validData = true;
+		// console.log(projects);
 	}
 </script>
 
@@ -59,58 +65,17 @@
 
 	<AnimateContent {activeItem}>
 		{#if activeItem == 'Projects'}
-			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-			<div class="flex px-3 py-2 justify-center flex-wrap">
-				<div
-					class="card w-96 bg-neutral-200 shadow-xl m-3 hover:cursor-pointer hover:scale-105 transition duration-400"
-					on:click={() => (webModalIsOpen = true)}
-				>
-					<figure>
-						<img src={cardImageCode} alt="placeholder" />
-					</figure>
-					<div class="card-body">
-						<h2 class="card-title text-black">This Website😎</h2>
-						<p class="text-black">
-							I wanted to learn SvelteKit, and have a personal website. So I made this!
-							<br /> It's built with SvelteKit, TailwindCSS and DaisyUi.
-						</p>
+			<div class="relative min-h-screen">
+				{#if validData}
+					<div class="flex px-3 py-2 justify-center flex-wrap">
+						{#each projects as project}
+							<Projectcard {project} />
+						{/each}
 					</div>
-				</div>
-				<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-				<div
-					class="card w-96 bg-neutral-200 shadow-xl m-3 hover:cursor-pointer hover:scale-105 transition duration-400"
-					on:click={() => (merchModalIsOpen = true)}
-				>
-					<figure>
-						<img src={cardImageMerch} alt="placeholder" />
-					</figure>
-					<div class="card-body">
-						<h2 class="card-title text-black">Student Union Merch</h2>
-						<p class="text-black">
-							At some point in 2022, I got an image in my head I thought would be funny on a
-							sweater. So I decided to design (with some help), create, distribute, and sell it all
-							by myself.
-						</p>
-					</div>
-				</div>
-				<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-				<div
-					class="card w-96 bg-neutral-200 shadow-xl m-3 hover:cursor-pointer hover:scale-105 transition duration-400"
-					on:click={() => (gameModalIsOpen = true)}
-				>
-					<figure>
-						<img src={cardImageArcade} alt="placeholder" />
-					</figure>
-					<div class="card-body">
-						<h2 class="card-title text-black">Arcade Game</h2>
-						<p class="text-black">
-							Built a gamestation with my student group as part of a university project.
-						</p>
-					</div>
-				</div>
+				{:else}
+					<p>There is no data to show.</p>
+				{/if}
 			</div>
-
-			<Modals bind:webModalIsOpen bind:merchModalIsOpen bind:gameModalIsOpen />
 
 			<h1 class="text-center text-2xl">More coming soon</h1>
 		{:else if activeItem == 'Bio'}
