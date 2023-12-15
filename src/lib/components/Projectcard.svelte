@@ -15,10 +15,12 @@
 	class="card w-96 bg-neutral-200 shadow-xl m-3 hover:cursor-pointer hover:scale-105 transition duration-400"
 	on:click={openModal}
 >
-	<img src={project.card_image} alt="placeholder_image" />
+	<figure>
+		<img src={project.card_image} alt="placeholder_image" />
+	</figure>
 	<div class="card-body">
 		<h2 class="card-title text-black">{project.title}</h2>
-		<p class="text-black">{project.description}</p>
+		<p class="text-black" bind:innerHTML={project.description} contenteditable="false" />
 	</div>
 </div>
 
