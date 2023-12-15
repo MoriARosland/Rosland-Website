@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { PUBLIC_GOOGLE_ANALYTICS } from '$env/static/public';
 
 	$: {
 		if (typeof gtag !== 'undefined') {
-			gtag('config', PUBLIC_GOOGLE_ANALYTICS, {
+			gtag('config', 'G-77F4S15RYG', {
 				page_title: document.title,
 				page_path: $page.url.pathname
 			});
@@ -23,6 +22,6 @@
 		}
 
 		gtag('js', new Date());
-		gtag('config', PUBLIC_GOOGLE_ANALYTICS);
+		gtag('config', 'G-77F4S15RYG');
 	</script>
 </svelte:head>
