@@ -1,7 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { getStorage } from "firebase/storage";
+// import { getStorage, getDownloadURL, ref } from "firebase/storage";
 import { getFirestore, collection, getDocs, addDoc, type DocumentData } from "firebase/firestore";
 import { FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID, FIREBASE_STORAGE_BUCKET, FIREBASE_MESSAGING_SENDER_ID, FIREBASE_APP_ID, FIREBASE_MEASUREMENT_ID } from '$env/static/private';
+import type { Firebase_Project } from "./types";
+
 
 const firebaseConfig = {
     apiKey: FIREBASE_API_KEY,
@@ -13,10 +15,12 @@ const firebaseConfig = {
     measurementId: FIREBASE_MEASUREMENT_ID
 };
 
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const storage = getStorage(app);
+// const storage = getStorage(app);
 
 export async function getProjectsData() {
 
@@ -31,5 +35,11 @@ export async function getProjectsData() {
         // console.log(`${doc.id} => ${doc.data()}`);
     });
 
-    return projectList;
+    // // -- Get download reference [DEBUGGING] -- //
+    // const imgRef = ref(storage, '<URL>');
+    // const zeURl = await getDownloadURL(imgRef);
+    // console.log(`Download URL: ${zeURl}`);
+    // // ---------------------------------------- //
+
+    return projectList as Firebase_Project[];
 }
