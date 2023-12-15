@@ -1,6 +1,5 @@
 import type { PageServerLoad } from './$types';
 import { getProjectsData } from '$lib/firebase';
-import { error } from '@sveltejs/kit';
 
 export const load = (async () => {
 
