@@ -3,17 +3,47 @@
 	import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 	import { userStore } from 'sveltefire';
 
+	$: admin = false;
+
+	const user = userStore(auth);
+
 	async function signInWithGoogle() {
 		const provider = new GoogleAuthProvider();
 		const user = await signInWithPopup(auth, provider);
-		console.log(user);
-	}
+		const userID = { googleID: user.user.uid };
 
-	const user = userStore(auth);
+		try {
+			const response = await fetch('/api/verifyID', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(userID)
+			});
+
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+
+			const data = await response.json();
+			const { isAdmin } = data;
+
+			if (isAdmin === true) {
+				admin = true;
+			} else {
+				admin = false;
+				alert('You are not an admin. Signing out.');
+				signOut(auth);
+			}
+		} catch (err) {
+			signOut(auth);
+			alert(err);
+			admin = false;
+		}
+	}
 </script>
 
-{#if $user && $user.uid == '4NFoYv76eyTTPtptAD7rhcSnm4K2'}
-	// Remove this IdleDeadline.
+{#if $user && admin === true}
 	<p>User id: {$user?.uid}</p>
 	<button class="btn btn-primary" on:click={() => signOut(auth)}>Sign out</button>
 {:else}
