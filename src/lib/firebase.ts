@@ -33,6 +33,8 @@ export async function getProjectsData() {
 
     querySnapshot.forEach((doc) => {
         projectList.push(doc.data());
+        // console.log(doc.data());
+        // console.log(`${doc.id} => ${doc.data()}`);
     });
 
     // // -- Get download reference [DEBUGGING] -- //
