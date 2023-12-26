@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { auth } from '$lib/firebase';
+	import { error } from '@sveltejs/kit';
 	import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 	import { userStore } from 'sveltefire';
 
@@ -21,10 +22,6 @@
 				body: JSON.stringify(userID)
 			});
 
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
-
 			const data = await response.json();
 			const { isAdmin } = data;
 
@@ -32,13 +29,13 @@
 				admin = true;
 			} else {
 				admin = false;
-				alert('You are not an admin. Signing out.');
+				alert('You are not an admin. Sign-in denied.');
 				signOut(auth);
 			}
 		} catch (err) {
 			signOut(auth);
-			alert(err);
 			admin = false;
+			alert('Server error. Could not resolve API-request.');
 		}
 	}
 </script>
