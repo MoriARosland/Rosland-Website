@@ -2,7 +2,7 @@ import { error, json } from '@sveltejs/kit';
 import { GOOGLE_ID } from '$env/static/private'
 import type { RequestHandler } from './$types';
 
-export const POST: RequestHandler = async ({request}) => {
+export const POST: RequestHandler = async ({ request }) => {
     let requestData;
 
     try {
@@ -12,11 +12,10 @@ export const POST: RequestHandler = async ({request}) => {
     }
 
     const { googleID } = requestData;
-    // console.log(`Received ID: ${googleID}`);
 
     if (googleID == GOOGLE_ID) {
-        return json({isAdmin: true})
+        return json({ isAdmin: true })
     } else {
-        throw error(401, 'Login denied. You must be an admin to sign in');
+        throw json({ isAdmin: false })
     }
 };
