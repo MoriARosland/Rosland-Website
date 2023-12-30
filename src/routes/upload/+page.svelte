@@ -72,37 +72,39 @@
 	</div>
 {/if} -->
 
-<form class="flex flex-col">
-	<input
-		type="text"
-		placeholder="Project title"
-		class="input input-bordered w-full max-w-xs my-1"
-		bind:value={title}
-	/>
-	<input
-		type="text"
-		placeholder="Project description"
-		class="input input-bordered w-full max-w-xs my-1"
-		bind:value={description}
-	/>
-	<input
-		type="text"
-		placeholder="Modal title"
-		class="input input-bordered w-full max-w-xs my-1"
-		bind:value={modal_title}
-	/>
-	<input
-		type="text"
-		placeholder="Modal description"
-		class="input input-bordered w-full max-w-xs my-1"
-		bind:value={modal_text}
-	/>
+<div class="flex flex-col justify-center items-center min-h-screen">
+	<form class="flex flex-col">
+		<input
+			type="text"
+			placeholder="Project title"
+			class="input input-bordered w-full max-w-xs my-1"
+			bind:value={title}
+		/>
+		<input
+			type="text"
+			placeholder="Project description"
+			class="input input-bordered w-full max-w-xs my-1"
+			bind:value={description}
+		/>
+		<input
+			type="text"
+			placeholder="Modal title"
+			class="input input-bordered w-full max-w-xs my-1"
+			bind:value={modal_title}
+		/>
+		<input
+			type="text"
+			placeholder="Modal description"
+			class="input input-bordered w-full max-w-xs my-1"
+			bind:value={modal_text}
+		/>
 
-	{#if isFormValid}
-		<button class="btn btn-success w-full max-w-xs my-1" on:click={uploadProject}
-			>Upload Project
-		</button>
-	{:else}
-		<button class="btn btn-disabled w-full max-w-xs my-1">Upload Project </button>
-	{/if}
-</form>
+		{#if isFormValid}
+			<button class="btn btn-success w-full max-w-xs my-1" on:click={uploadProject}
+				>Upload Project
+			</button>
+		{:else}
+			<button class="btn btn-disabled w-full max-w-xs my-1">Upload Project </button>
+		{/if}
+	</form>
+</div>
