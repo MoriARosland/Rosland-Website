@@ -1,5 +1,5 @@
 <div class="flex justify-center">
-	<a href="https://github.com/NamePending99" target="_blank">
+	<a href="https://github.com/MoriARosland" target="_blank">
 		<svg
 			class="mx-1 my-1 fill-slate-400 hover:fill-sky-400 hover:scale-110 transition duration-400"
 			xmlns="http://www.w3.org/2000/svg"
